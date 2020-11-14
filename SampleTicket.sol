@@ -1224,6 +1224,7 @@ function mintTicket()  public {
 constructor( address _createrAddress , string memory _name ) ERC721Full ( _name , "TICKET" )  public {
     manager = _createrAddress;
     ticketNumber = 1;
+    mintTicket();
     }
 }
 
