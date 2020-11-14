@@ -1206,6 +1206,10 @@ contract SampleTicketNFTFactory {
     function create(  string memory name  ) public {
         new SampleTicketNFT( msg.sender , name );
     }
+    
+    function checkFactory() public pure returns (string memory) {
+        return "OK";
+    }
 }
 
 
