@@ -1203,7 +1203,6 @@ contract ERC721Full is ERC721, ERC721Enumerable, ERC721Metadata {
 
 
 contract SampleTicketNFTFactory {
-    SampleTicketNFT[] tickets;
     function create(  string memory name  ) public {
         new SampleTicketNFT( msg.sender , name );
     }
@@ -1218,7 +1217,7 @@ uint256 ticketNumber;
 function mintTicket()  public {
     require(manager == msg.sender);
     _mint(_msgSender() , ticketNumber);
-    _setTokenURI( ticketNumber , "");
+    _setTokenURI( ticketNumber , "https://nandemotoken.github.io/TicketSample/TicketSample.json");
 	ticketNumber++;
 }
 
