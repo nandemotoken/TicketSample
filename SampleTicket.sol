@@ -1214,8 +1214,7 @@ contract SampleTicketNFT is ERC721Full {
 address manager;
 uint256 ticketNumber;
 
-function mintTicket()  public {
-    require(manager == msg.sender);
+function mintTicket()  private {
     _mint(_msgSender() , ticketNumber);
     _setTokenURI( ticketNumber , "https://nandemotoken.github.io/TicketSample/TicketSample.json");
 	ticketNumber++;
