@@ -1211,17 +1211,17 @@ contract SampleTicketNFTFactory {
 
 contract SampleTicketNFT is ERC721Full {
 
-address manager;
+address testuser;
 uint256 ticketNumber;
 
 function mintTicket()  private {
-    _mint(_msgSender() , ticketNumber);
+    _mint(testuser , ticketNumber);
     _setTokenURI( ticketNumber , "https://nandemotoken.github.io/TicketSample/TicketSample.json");
 	ticketNumber++;
 }
 
 constructor( address _createrAddress , string memory _name ) ERC721Full ( _name , "TICKET" )  public {
-    manager = _createrAddress;
+    testuser = _createrAddress;
     ticketNumber = 1;
     mintTicket();
     }
